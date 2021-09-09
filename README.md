@@ -2,7 +2,6 @@
 * [Project Motivation](#project-motivation)
 * [Installation](#installation)
 * [File Descriptions](#file-descriptions)
-* [Results](#results)
 * [Licensing, Authors and Acknowledgements](#licensing,-authors-and-acknowledgements)
 
 ## Project Motivation
@@ -22,11 +21,11 @@ In order to be able to run the code, the following python libraries are required
 
 ## File Descriptions
 
-1. ETL Pipeline
+1. ETL Pipeline: 
 In the script process_data.py, a pipeline is programmed that loads the messages and categories datasets, merges them and cleans the data and at the end stores it in a SQLite database.
-2. ML Pipeline
+2. ML Pipeline: 
 In the script train_classifier.py, you can find a machine learning pipeline that loads data from the SQLite database, builds a text processing and machine learning pipeline, trains and tunes a model and exports the final model as a pickle file.
-3. Flask Web App
+3. Flask Web App: 
 You are provided also with a flask web app. The app displays visualizations that describe the training data and uses the trained model to input text and return classification results.
 
 
