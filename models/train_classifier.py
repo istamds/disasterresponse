@@ -18,7 +18,7 @@ from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer, TfidfTransformer
 
 from sklearn.model_selection import train_test_split
-
+from sklearn.model_selection import GridSearchCV
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.ensemble import RandomForestClassifier
 
@@ -58,8 +58,9 @@ def build_model():
     '''Creates a pipeline model for with count vectorization, tokenization and at the end the classification model'''
     model = Pipeline([('token', CountVectorizer(tokenizer=tokenize)),
                      ('tfidf', TfidfTransformer()),
-                     ('clf', MultiOutputClassifier(estimator=RandomForestClassifier()))
+                     ('clf', MultiOutputClassifier(estimator=RandomForestClassifier(min_samples_split=5, max_depth=None, bootstrap=True)))         
                     ])
+       
     return model
 
 
